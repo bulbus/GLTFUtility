@@ -7,16 +7,16 @@ namespace Siccity.GLTFUtility {
 	[Serializable]
 	public class ShaderSettings {
 		[SerializeField] private Shader metallic;
-		public Shader Metallic { get { return metallic != null ? metallic : GetDefaultMetallic(); } }
+		public Shader Metallic { get { return metallic != null ? metallic : GetDefaultMetallic(); } set {metallic = value;} }
 
 		[SerializeField] private Shader metallicBlend;
-		public Shader MetallicBlend { get { return metallicBlend != null ? metallicBlend : GetDefaultMetallicBlend(); } }
+		public Shader MetallicBlend { get { return metallicBlend != null ? metallicBlend : GetDefaultMetallicBlend(); } set {metallicBlend=value;} }
 
 		[SerializeField] private Shader specular;
-		public Shader Specular { get { return specular != null ? specular : GetDefaultSpecular(); } }
+		public Shader Specular { get { return specular != null ? specular : GetDefaultSpecular(); } set{specular = value;}}
 
 		[SerializeField] private Shader specularBlend;
-		public Shader SpecularBlend { get { return specularBlend != null ? specularBlend : GetDefaultSpecularBlend(); } }
+		public Shader SpecularBlend { get { return specularBlend != null ? specularBlend : GetDefaultSpecularBlend(); } set {specularBlend = value;} }
 
 		/// <summary> Caches default shaders so that async import won't try to search for them while on a separate thread </summary>
 		public void CacheDefaultShaders() {
